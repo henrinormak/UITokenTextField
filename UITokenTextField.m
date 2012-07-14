@@ -35,7 +35,7 @@
         self.highlightedFillColor = [UIColor colorWithRed: 152 / 255.0 green: 152 / 255.0 blue: 152 / 255.0 alpha: 1.0];
         self.highlightedStrokeColor = [UIColor colorWithRed: 108.0 / 255.0 green: 108.0 / 255.0 blue: 108.0 / 255.0 alpha: 1.0];
         
-        // Adjust font
+        // Adjust font and other text attributes
         self.font = [UIFont systemFontOfSize: 15.0];
         self.textColor = [UIColor colorWithRed: 96.0 / 255.0 green: 96.0 / 255.0 blue: 96.0 / 255.0 alpha: 1.0];
         self.highlightedTextColor = [UIColor whiteColor];
@@ -49,6 +49,8 @@
 - (void)dealloc {
     [strokeColor release];
     [fillColor release];
+    [highlightedStrokeColor release];
+    [highlightedFillColor release];
     
     [super dealloc];
 }

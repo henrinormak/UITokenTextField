@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSCharacterSet *tokenzingCharacterSet;
 
 // Tokens, may be changed, will cause a reload of the view
-// An array of NSString/NSAttributedString instances
+// An array of NSString instances
 @property (nonatomic, retain) NSArray *tokens;
 
 // Delegate
