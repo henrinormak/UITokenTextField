@@ -392,6 +392,9 @@
     [tokens autorelease];
     tokens = [newTokens retain];
     
+    // Let our listeners know
+    [self sendActionsForControlEvents: UIControlEventValueChanged];
+    
     [self setNeedsLayout];
 }
 
@@ -516,6 +519,9 @@
     [self.textField resignFirstResponder];
     self.textField.userInteractionEnabled = NO;
     
+    // Notify our listeners
+    [self sendActionsForControlEvents: UIControlEventEditingDidEnd];
+    
     // Create the display text to show on the textfield
     self.textField.text = [self tokenStringThatFits];
     
@@ -538,6 +544,9 @@
     
     // Reset textfield text
     self.textField.text = kInvisibleSpaceString;
+    
+    // Notify our listeners
+    [self sendActionsForControlEvents: UIControlEventEditingDidBegin];
     
     // Pass along to the text field and make sure we are editing
     editing = YES;
@@ -656,6 +665,9 @@
     } else {
         // Simply resign focus
         [self resignFirstResponder];
+        
+        // Notify listeners, special kind of end to the editing
+        [self sendActionsForControlEvents: UIControlEventEditingDidEndOnExit];
     }
     
     // Either way, do not allow a newline input
