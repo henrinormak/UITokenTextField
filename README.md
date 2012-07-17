@@ -7,3 +7,6 @@ The characters used for tokenising can be changed and a few handy delegate callb
 The drawing of the tokenised labels is completely customisable, for example you can change the colors by simply changing the properties `fillColor`, `strokeColor`, `highlightedFillColor` and `highlightedStrokeColor` of the `UITokenLabel` instances the text field creates. 
 
 Feel free to use as you wish.
+
+###### Example of the default appearance, on the left in edit mode, on the right in compact one line mode
+![Example](https://github.com/henrinormak/UITokenTextField/blob/master/example.png?raw=true)
